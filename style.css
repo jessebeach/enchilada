@@ -1,0 +1,494 @@
+/*
+
+Enchilada style sheet
+Special to Spark team
+Preston So, Acquia
+
+*/
+
+/**
+ * Font declarations
+ */
+@font-face {
+  font-family: 'Source Sans';
+  src: url('fonts/SourceSansPro-Bold-webfont.eot');
+  src: url('fonts/SourceSansPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/SourceSansPro-Bold-webfont.woff') format('woff'),
+       url('fonts/SourceSansPro-Bold-webfont.ttf') format('truetype'),
+       url('fonts/SourceSansPro-Bold-webfont.svg#SourceSansProBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Sans';
+  src: url('fonts/SourceSansPro-BoldIt-webfont.eot');
+  src: url('fonts/SourceSansPro-BoldIt-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/SourceSansPro-BoldIt-webfont.woff') format('woff'),
+       url('fonts/SourceSansPro-BoldIt-webfont.ttf') format('truetype'),
+       url('fonts/SourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Source Sans';
+  src: url('fonts/SourceSansPro-Regular-webfont.eot');
+  src: url('fonts/SourceSansPro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/SourceSansPro-Regular-webfont.woff') format('woff'),
+       url('fonts/SourceSansPro-Regular-webfont.ttf') format('truetype'),
+       url('fonts/SourceSansPro-Regular-webfont.svg#SourceSansProRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Sans';
+  src: url('fonts/SourceSansPro-It-webfont.eot');
+  src: url('fonts/SourceSansPro-It-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/SourceSansPro-It-webfont.woff') format('woff'),
+       url('fonts/SourceSansPro-It-webfont.ttf') format('truetype'),
+       url('fonts/SourceSansPro-It-webfont.svg#SourceSansProItalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/**
+ * Base elements
+ */
+html, body {
+  height: 100%;
+}
+body {
+  font: 0.9em/1.5em 'Source Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body:before {
+  /* Opera fix */
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+}
+
+/**
+ * Regions
+ */
+#page {
+  margin: 0;
+  width: 1420px;
+  min-height: 100%;
+}
+#main {
+  overflow: auto;
+  padding-bottom: 40px;
+}
+#content img {
+  margin-top: -40px;
+}
+#content img.with-vertical {
+  position: relative;
+  right: 256px;
+  overflow: hidden;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  clear: both;
+  width: 100%;
+}
+#footer a {
+  display: block;
+  width: 150px;
+  text-align: center;
+  height: 20px;
+  padding: 10px;
+  margin: 0 auto;
+  font-weight: bold;
+  color: #eee;
+  text-decoration: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-bottom-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+	background-image: -moz-linear-gradient(93% 4% -90deg,rgb(111,194,242) 0%,rgb(78,151,192) 100%); /* Firefox v.3.6+ */
+	background-image: -webkit-gradient(linear,93% 4%,93% 81%,color-stop(0, rgb(111,194,242)),color-stop(1, rgb(78,151,192))); /* Safari v4.0+, Chrome v3.0+ */
+	background-image: -webkit-linear-gradient(-90deg,rgb(111,194,242) 0%,rgb(78,151,192) 100%); /* Chrome v10.0+ */
+	background-image: -o-linear-gradient(-90deg,rgb(111,194,242) 0%,rgb(78,151,192) 100%); /* Opera v11.10+ */
+	background-image: -ms-linear-gradient(-90deg,rgb(111,194,242) 0%,rgb(78,151,192) 100%); /* IE v10+ */
+	background-image: linear-gradient(-90deg,rgb(111,194,242) 0%,rgb(78,151,192) 100%);
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -moz-box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+}
+#footer a:hover, #footer a:active {
+  color: white;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#footer p {
+  margin: 0;
+}
+#footer .contextual {
+  display: none;
+}
+
+/**
+ * Keyframes
+ */
+@-moz-keyframes outlinefade {
+  0% { outline: 1px solid transparent; }
+  33% { outline: 1px solid #4d9de9; }
+  66% { outline: 1px solid #4d9de9; }
+  100% { outline: 1px solid transparent; }
+}
+@-o-keyframes outlinefade {
+  0% { outline: 1px solid transparent; }
+  33% { outline: 1px solid #4d9de9; }
+  66% { outline: 1px solid #4d9de9; }
+  100% { outline: 1px solid transparent; }
+}
+@-webkit-keyframes outlinefade {
+  0% { outline: 1px solid transparent; }
+  33% { outline: 1px solid #4d9de9; }
+  66% { outline: 1px solid #4d9de9; }
+  100% { outline: 1px solid transparent; }
+}
+@keyframes outlinefade {
+  0% { outline: 1px solid transparent; }
+  33% { outline: 1px solid #4d9de9; }
+  66% { outline: 1px solid #4d9de9; }
+  100% { outline: 1px solid transparent; }
+}
+a.mapped {
+  outline: 1px solid transparent;
+  -moz-animation: outlinefade 5s;
+  -o-animation: outlinefade 5s;
+  -webkit-animation: outlinefade 5s;
+  animation: outlinefade 5s;
+}
+a.mapped:hover {
+  outline: 1px solid #4d9de9;
+  -moz-transition: outline 0.5s;
+  -o-transition: outline 0.5s;
+  -webkit-transition: outline 0.5s;
+  transition: outline 0.5s;
+}
+
+/**
+ * Toolbar overrides
+ */
+.icon-dashboard:before {
+  background-image: url('images/icon-dashboard.png');
+}
+.icon-dashboard:active:before,
+.icon-dashboard.active:before {
+  background-image: url('images/icon-dashboard-active.png');
+}
+.icon-administration:before {
+  background-image: url('images/icon-people.png');
+}
+.icon-administration:active:before,
+.icon-administration.active:before {
+  background-image: url('images/icon-people-active.png');
+}
+.icon-extensions:before {
+  background-image: url('images/icon-extend.png');
+}
+.icon-extensions:active:before,
+.icon-extensions.active:before {
+  background-image: url('images/icon-extend-active.png');
+}
+
+/**
+ * Page-specific links
+ */
+.mapped, .unmapped {
+  position: relative;
+  text-indent: -9999px;
+}
+a.mapped, div.unmapped {
+  display: inline-block;
+}
+/* Dashboard */
+#m-expand-add-shortcut {
+  width: 27px;
+  height: 33px;
+  bottom: 1925px;
+  margin-left: 382px;
+}
+#m-configure-panel {
+  width: 18px;
+  height: 25px;
+  bottom: 1890px;
+  margin-left: 183px;
+}
+/* Dashboard / Add shortcut */
+#m-add-shortcut {
+  width: 122px;
+  height: 30px;
+  bottom: 1925px;
+  margin-left: 382px;
+}
+/* Dashboard / Configure panel */
+#m-close-configure-panel {
+  width: 16px;
+  height: 25px;
+  bottom: 1895px;
+  margin-left: 746px;
+}
+/* Content > Pages */
+#m-content-pages {
+  width: 130px;
+  height: 35px;
+  bottom: 1660px;
+  margin-left: 19px;
+}
+#m-landing-pages {
+  width: 124px;
+  height: 35px;
+  bottom: 1660px;
+}
+#m-dynamic-pages {
+  width: 129px;
+  height: 35px;
+  bottom: 1660px;
+}
+#m-add-content-page {
+  width: 180px;
+  height: 50px;
+  bottom: 1640px;
+  margin-left: 45px;
+}
+#m-add-content-page-drop {
+  width: 30px;
+  height: 50px;
+  bottom: 1640px;
+}
+/* Content > Pages > Content types */
+#m-edit-content-type {
+  width: 80px;
+  height: 300px;
+  bottom: 1580px;
+  margin-left: 988px;
+}
+/* Content > Pages > Content types / Edit content type */
+#m-save-content-type {
+  width: 203px;
+  height: 30px;
+  bottom: 1023px;
+  margin-left: 48px;
+}
+/* Content > Pages / Add content page */
+#m-publish-content-page {
+  width: 188px;
+  height: 30px;
+  bottom: 1360px;
+  margin-left: 45px;
+}
+/* Content > Pages / Add content page dropdown */
+#m-add-article {
+  width: 151px;
+  height: 28px;
+  bottom: 1538px;
+  margin-left: 100px;
+}
+/* Content > Pages / Landing pages */
+#m-add-landing-page {
+  width: 180px;
+  height: 50px;
+  bottom: 1640px;
+  margin-left: 45px;
+}
+#m-edit-landing-page {
+  width: 80px;
+  height: 180px;
+  bottom: 1555px;
+  margin-left: 988px;
+}
+/* Content > Pages / Landing pages / Add landing page */
+#m-save-new-landing-page {
+  width: 188px;
+  height: 30px;
+  bottom: 815px;
+  margin-left: 45px;
+}
+/* Content > Pages / Landing pages / Edit landing page */
+#m-save-landing-page {
+  width: 188px;
+  height: 30px;
+  bottom: 815px;
+  margin-left: 193px;
+}
+/* Content > Layouts */
+#m-add-layout {
+  width: 168px;
+  height: 50px;
+  bottom: 1650px;
+  margin-left: 45px;
+}
+/* Content > Layouts / Add layout */
+#m-save-layout {
+  width: 188px;
+  height: 30px;
+  bottom: 855px;
+  margin-left: 45px;
+}
+/* Content > Layouts > Breakpoints */
+#m-add-breakpoints {
+  width: 168px;
+  height: 50px;
+  bottom: 1650px;
+  margin-left: 45px;
+}
+/* Content > Layouts > Breakpoints / Add a breakpoint set */
+#m-save-breakpoints {
+  width: 63px;
+  height: 30px;
+  bottom: 1098px;
+  margin-left: 53px;
+}
+/* Content > Layouts > Grids */
+#m-add-grid {
+  width: 138px;
+  height: 50px;
+  bottom: 1660px;
+  margin-left: 19px;
+}
+#m-edit-grid {
+  width: 80px;
+  height: 26px;
+  bottom: 1628px;
+  margin-left: 1013px;
+}
+/* Content > Layouts > Grids / Add grid */
+#m-save-new-grid {
+  width: 60px;
+  height: 30px;
+  bottom: 1505px;
+  margin-left: 47px;
+}
+/* Content > Layouts > Grids / Edit grid */
+#m-save-grid {
+  width: 60px;
+  height: 30px;
+  bottom: 1440px;
+  margin-left: 47px;
+}
+/* Content > Layouts > Templates */
+#m-edit-template {
+  width: 80px;
+  height: 360px;
+  bottom: 1555px;
+  margin-left: 988px;
+}
+/* Content > Layouts > Templates / Edit template */
+#m-save-template {
+  width: 156px;
+  height: 30px;
+  bottom: 1096px;
+  margin-left: 48px;
+}
+/* Content > Menus */
+#m-add-menu {
+  width: 168px;
+  height: 50px;
+  bottom: 1650px;
+  margin-left: 45px;
+}
+#m-edit-menu {
+  width: 80px;
+  height: 180px;
+  bottom: 1565px;
+  margin-left: 988px;
+}
+/* Content > Menus / Add menu */
+#m-save-new-menu {
+  width: 156px;
+  height: 30px;
+  bottom: 1583px;
+  margin-left: 47px;
+}
+/* Content > Menus / Edit menu */
+#m-save-menu {
+  width: 156px;
+  height: 30px;
+  bottom: 1245px;
+  margin-left: 47px;
+}
+/* Content > Smart lists */
+#m-add-smart-list {
+  width: 168px;
+  height: 50px;
+  bottom: 1650px;
+  margin-left: 45px;
+}
+/* Content > Smart lists / Add smart list */
+#m-save-new-smart-list {
+  width: 160px;
+  height: 30px;
+  bottom: 1567px;
+  margin-left: 45px;
+}
+/* Appearance > Theme */
+#m-default-theme {
+  width: 130px;
+  height: 35px;
+  bottom: 1660px;
+  margin-left: 19px;
+}
+#m-admin-theme {
+  width: 124px;
+  height: 35px;
+  bottom: 1660px;
+}
+#m-all-themes {
+  width: 109px;
+  height: 35px;
+  bottom: 1660px;
+}
+/* Administration */
+#m-users {
+  width: 543px;
+  height: 89px;
+  bottom: 1874px;
+  margin-left: 16px;
+}
+/* Administration > Users */
+#m-people {
+  width: 100px;
+  height: 35px;
+  bottom: 1660px;
+  margin-left: 19px;
+}
+#m-permissions {
+  width: 130px;
+  height: 35px;
+  bottom: 1660px;
+}
+/* Extensions */
+#m-modules {
+  width: 100px;
+  height: 35px;
+  bottom: 1660px;
+  margin-left: 19px;
+}
+#m-themes {
+  width: 100px;
+  height: 35px;
+  bottom: 1660px;
+}

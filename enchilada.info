@@ -1,0 +1,7 @@
+name = Enchilada
+description = Extremely limited and stark theme. Special to Spark team at Acquia, 2012.
+core = 8.x
+engine = phptemplate
+stylesheets[all][] = style.css
+regions[content] = Content
+regions[footer] = Footer
